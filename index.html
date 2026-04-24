@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inchara R | Modern Portfolio</title>
+    <meta name="description" content="Personal portfolio of Inchara R - BCA Student & Web Developer. Showcasing 3D interactive designs and modern web projects.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <p>Initializing...</p>
+        </div>
+    </div>
+
+    <!-- Canvas for Three.js -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="glass-nav">
+        <div class="container nav-content">
+            <a href="#" class="logo">Inchara R<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="nav-resume-btns">
+                    <a href="resume.pdf" target="_blank" title="View Resume"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></a>
+                    <a href="resume.pdf" download title="Download Resume"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg></a>
+                </li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-flex">
+                    <div class="hero-image reveal-image">
+                        <div class="image-wrapper">
+                            <img src="profile.html.jpeg" alt="Inchara R">
+                        </div>
+                    </div>
+                    <div class="hero-text">
+                        <h2 class="reveal-text">Hi, I'm</h2>
+                        <h1 class="glitch-text" data-text="Inchara R">Inchara R</h1>
+                        <h3 class="role-text">BCA Student / Web Developer</h3>
+                        <p class="tagline">Final-year BCA student passionate about AI and Web Development, building modern digital solutions.</p>
+                        <div class="hero-socials">
+                            <a href="https://github.com" target="_blank" class="social-btn github">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/inchara-r-477119232/" target="_blank" class="social-btn linkedin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                        <div class="cta-group">
+                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="resume.pdf" target="_blank" class="btn btn-secondary"><i data-lucide="eye"></i> View Resume</a>
+                            <a href="resume.pdf" download class="btn btn-secondary"><i data-lucide="download"></i> Download Resume</a>
+                            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-card glass">
+                        <h3>Career Objective</h3>
+                        <p>Seeking an entry-level IT role to apply programming skills in C, Java, and Python, and contribute to software development and problem-solving in a growth-oriented organization.</p>
+                        <br>
+                        <h3>Education</h3>
+                        <p><strong>BCA (Bachelor of Computer Applications)</strong></p>
+                        <p>Vidya First Grade College, Tumkur (Pursuing)</p>
+                    </div>
+                    <div class="about-stats glass">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="90">0</span>%
+                            <p>C / Java / Python</p>
+                            <div class="progress-bar"><div class="progress" style="width: 0%"></div></div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="95">0</span>%
+                            <p>Web Technologies (HTML/CSS)</p>
+                            <div class="progress-bar"><div class="progress" style="width: 0%"></div></div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="80">0</span>%
+                            <p>Database (MySQL)</p>
+                            <div class="progress-bar"><div class="progress" style="width: 0%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Certificates Section -->
+        <section id="experience" class="experience section">
+            <div class="container">
+                <h2 class="section-title">Experience & Certifications</h2>
+                <div class="exp-grid">
+                    <div class="exp-card glass">
+                        <div class="exp-header">
+                            <i data-lucide="briefcase" class="icon-glow"></i>
+                            <div>
+                                <h3>Intern – AI Kshetra Tech Solutions</h3>
+                                <p class="exp-date">1 Month Internship</p>
+                            </div>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Assisted in AI-related tasks and project development</li>
+                            <li>Gained hands-on exposure to tools and workflows</li>
+                            <li>Developed teamwork and communication skills</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card glass">
+                        <div class="exp-header">
+                            <i data-lucide="award" class="icon-glow"></i>
+                            <div>
+                                <h3>Certifications</h3>
+                            </div>
+                        </div>
+                        <ul class="exp-list">
+                            <li>Java Programming Certification – Great Learning Academy <a href="certificate.pdf" target="_blank" class="cert-link">(View Certificate)</a></li>
+                            <li>Active learner in Artificial Intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <h2 class="section-title">Personal Portfolio</h2>
+                <div class="projects-grid solo-project">
+                    <!-- Project 1 -->
+                    <div class="project-card glass">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800" alt="Portfolio Project">
+                        </div>
+                        <div class="project-info">
+                            <h3>Personal Portfolio</h3>
+                            <div class="project-tags">
+                                <span class="tag-badge">HTML</span>
+                                <span class="tag-badge">CSS</span>
+                                <span class="tag-badge">JavaScript</span>
+                            </div>
+                            <p>A futuristic personal portfolio website showcasing my skills and experience. Built from scratch using modern web technologies.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i data-lucide="external-link"></i> Live Demo</a>
+                                <a href="https://github.com" class="project-link"><i data-lucide="github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-showcase">
+                    <div class="skill-category glass">
+                        <h4><i data-lucide="code-2"></i> Languages</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass">
+                        <h4><i data-lucide="layout"></i> Web & Data</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass">
+                        <h4><i data-lucide="settings"></i> Tools & Concepts</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">MS Office</span>
+                            <span class="skill-tag">AI Basics</span>
+                            <span class="skill-tag">DBMS / OOP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-wrapper">
+                    <form id="contact-form" class="contact-form glass" action="https://formspree.io/f/xlgazbjn" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    
+                        <div class="contact-info">
+                            <div class="contact-details">
+                                <p><i data-lucide="phone" style="width: 18px; vertical-align: middle; margin-right: 10px; color: var(--primary-color);"></i> <strong>Phone:</strong> <a href="tel:9019889872" style="color: inherit; text-decoration: none;">+91 9019889872</a></p>
+                                <p><i data-lucide="mail" style="width: 18px; vertical-align: middle; margin-right: 10px; color: var(--primary-color);"></i> <strong>Email:</strong> <a href="mailto:ravikumar888452@gmail.com" style="color: inherit; text-decoration: none;">ravikumar888452@gmail.com</a></p>
+                            </div>
+                            <br>
+                            <div class="social-links">
+                            <a href="https://www.linkedin.com/in/inchara-r-477119232/" class="social-icon" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                            <a href="https://github.com" class="social-icon" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+                            <a href="mailto:ravikumar888452@gmail.com" class="social-icon" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                            <a href="tel:9019889872" class="social-icon" title="Phone"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-1.21a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+                        </div>
+                        <p class="footer-note">© 2026 Inchara R. Built with ❤️ and Code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    
+    <script>
+        // FORM SUBMISSION HANDLER (BUILT-IN)
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = form.querySelector('button[type="submit"]');
+                    const originalText = btn.innerText;
+                    
+                    btn.innerText = 'Sending...';
+                    btn.disabled = true;
+
+                    const data = new FormData(form);
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    }).then(response => {
+                        if (response.ok) {
+                            alert('Success! Your message has been sent.');
+                            form.reset();
+                        } else {
+                            alert('Error: Please check your Formspree ID or Internet.');
+                        }
+                    }).catch(error => {
+                        alert('Network Error: Please try again.');
+                    }).finally(() => {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
